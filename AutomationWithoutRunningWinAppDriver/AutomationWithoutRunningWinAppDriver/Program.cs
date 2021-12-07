@@ -16,7 +16,7 @@ namespace AutomationWithoutRunningWinAppDriver
         static void Main(string[] args)
         {
             var appiumLocalService = new AppiumServiceBuilder().UsingPort(4723).
-                WithLogFile(new FileInfo(@"C:\Users\hss_h\Documents\Logs\TestLog.txt")).Build();
+                WithLogFile(new FileInfo(@"C:\Users\hs.santos\Documents\Logs\TestLog.txt")).Build();
 
             appiumLocalService.Start();
 

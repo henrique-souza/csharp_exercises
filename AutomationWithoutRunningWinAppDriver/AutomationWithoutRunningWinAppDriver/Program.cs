@@ -17,6 +17,12 @@ namespace AutomationWithoutRunningWinAppDriver
             var appiumLocalService = new AppiumServiceBuilder().UsingPort(4723).Build();
 
             appiumLocalService.Start();
+
+            AppiumOptions appiumOption = new AppiumOptions();
+
+            appiumOption.AddAdditionalCapability("app", "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App");
+
+            WindowsDriver<WindowsElement> session = new WindowsDriver<WindowsElement>(appiumLocalService, appiumOption);
         }
     }
 }

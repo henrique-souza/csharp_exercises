@@ -12,10 +12,14 @@ namespace RunNotePad
     {
         static void Main(string[] args)
         {
-            //Para testar esta aplicação corretamente, você precisará atirar as Ferramentas de Desenvolvedor do
-            //Windows 10 > Baixar a versão mais recente do WinAppDriver (https://github.com/microsoft/WinAppDriver) >
-            // > Ir no Gerenciador de Soluções > Botão direito em Referências > Gerenciar Pacotes NuGet >
-            // > Instalar o 'Appium.WinDriver' > Abrir o WinAppDriver instalado na máquina > Compilar este código
+            //Para testar esta aplicação corretamente, você precisará:
+            // 1. Ativar as Ferramentas de Desenvolvedor do Windows 10
+            // 2. Baixar a versão mais recente do WinAppDriver (https://github.com/microsoft/WinAppDriver)
+            // 3. Instalar o Node.Js
+            // 4. Abrir o Prompt de Comando/PowerShell > executar o comando 'npm install -g appium' 
+            // 5. Abrir o Visual Studio e ir no Gerenciador de Soluções
+            // 6. Botão direito em Referências > Gerenciar Pacotes NuGet 
+            // 7. Instalar o 'Appium.WinDriver' > Abrir o 'WinAppDriver' instalado na máquina > Compilar este código
 
             WindowsDriver<WindowsElement> notePadSession;
             AppiumOptions desiredCapabilities = new AppiumOptions();

@@ -43,7 +43,6 @@ x64/
 *.log
 *.svclog
 *.scc
-*.sln
 *.config
 *.csproj
 

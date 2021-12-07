@@ -15,6 +15,7 @@ namespace AutomationWithoutRunningWinAppDriver
     {
         static void Main(string[] args)
         {
+            //C:\Users\hss_h\
             var appiumLocalService = new AppiumServiceBuilder().UsingPort(4723).
                 WithLogFile(new FileInfo(@"C:\Users\hs.santos\Documents\Logs\TestLog.txt")).Build();
 
@@ -34,7 +35,7 @@ namespace AutomationWithoutRunningWinAppDriver
 
             // a partir desta linha, foi solicitado a chamada do objeto 'session'
             // então irei reescrever a linha acima
-
+            
             session.Quit();
         }
     }

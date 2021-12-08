@@ -12,6 +12,7 @@ namespace WindowsMovieAndTV
     {
         static void Main(string[] args)
         {
+            
             WindowsDriver<WindowsElement> WindowsMovieTV;
             AppiumOptions appiumOptions = new AppiumOptions();
 

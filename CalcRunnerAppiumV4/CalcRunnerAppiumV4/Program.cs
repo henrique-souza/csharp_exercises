@@ -80,7 +80,28 @@ namespace CalcRunnerAppiumV4
                 Console.WriteLine("O resultado está incorreto.");
             }
 
+            #endregion
+
+            //Nesta linha, a calculadora apaga o resultado da operação acima
             calculatorResults.SendKeys(Keys.Escape);
+
+            #region Fazendo a mesma operação que acima, mas sem puxar o clique do Mouse
+
+            calculatorResults.SendKeys("2");
+            calculatorResults.SendKeys("+");
+            calculatorResults.SendKeys("2");
+            calculatorResults.SendKeys("=");
+
+            Console.WriteLine($"Valor mostrado pela Calculadora: {calculatorResults.Text}");
+
+            if (calculatorResults.Text.EndsWith("4"))
+            {
+                Console.WriteLine("O resultado está correto.");
+            }
+            else
+            {
+                Console.WriteLine("O resultado está incorreto.");
+            }
 
             #endregion
         }

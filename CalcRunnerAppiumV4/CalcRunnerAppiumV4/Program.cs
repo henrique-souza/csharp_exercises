@@ -30,6 +30,8 @@ namespace CalcRunnerAppiumV4
                 new Uri("http://127.0.0.1:4723"),
                 appiumOptions);
 
+            sessionCalculator.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
+
             #endregion
 
             // Declarando os objetos que o Appium deve clicar
@@ -104,6 +106,8 @@ namespace CalcRunnerAppiumV4
             }
 
             #endregion
+
+            
         }
     }
 }

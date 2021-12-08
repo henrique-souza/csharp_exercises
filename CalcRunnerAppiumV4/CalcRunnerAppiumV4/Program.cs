@@ -12,6 +12,12 @@ namespace CalcRunnerAppiumV4
     {
         static void Main(string[] args)
         {
+            /*
+             Este projeto é muito interessante.
+             Nas linhas de código a seguir, é feito uma automação da tarefa de adição de 2 + 2 
+             e, em seguida, ao digitar os comandos da calculadora, a tecla = também é clicada
+             automaticamente, mostrando o resultado na Calculadora do Windows.
+            */
             WindowsDriver<WindowsElement> sessionCalculator;
             AppiumOptions appiumOptions = new AppiumOptions();
 
@@ -21,7 +27,19 @@ namespace CalcRunnerAppiumV4
                 new Uri("http://127.0.0.1:4723"),
                 appiumOptions);
 
-            sessionCalculator.FindElementByName("");
+            // Declarando os objetos que o Appium deve clicar
+            var ButtonTwo = sessionCalculator.FindElementByName("Dois");
+            var ButtonMais = sessionCalculator.FindElementByName("Mais");
+            var ButtonIgualA = sessionCalculator.FindElementByName("Igual a");
+
+            // Declarando as operações que devem ser feitas dentro da Calculadora.
+            ButtonTwo.Click();
+
+            ButtonMais.Click();
+
+            ButtonTwo.Click();
+
+            ButtonIgualA.Click();
         }
     }
 }

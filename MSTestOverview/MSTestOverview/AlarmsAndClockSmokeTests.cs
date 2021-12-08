@@ -4,10 +4,10 @@ using System;
 namespace MSTestOverview
 {
     [TestClass]
-    public class UnitTest1
+    public class AlarmsAndClockSmokeTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestAlarmsAndClockIsLaunchingSuccessfully() 
         {
         }
     }

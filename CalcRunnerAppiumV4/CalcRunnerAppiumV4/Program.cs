@@ -18,6 +18,8 @@ namespace CalcRunnerAppiumV4
              e, em seguida, ao digitar os comandos da calculadora, a tecla = também é clicada
              automaticamente, mostrando o resultado na Calculadora do Windows.
             */
+            #region Chamando a Calculadora do Windows
+
             WindowsDriver<WindowsElement> sessionCalculator;
             AppiumOptions appiumOptions = new AppiumOptions();
 
@@ -27,19 +29,26 @@ namespace CalcRunnerAppiumV4
                 new Uri("http://127.0.0.1:4723"),
                 appiumOptions);
 
+            #endregion
+
             // Declarando os objetos que o Appium deve clicar
+            #region Variaveis que chamam os botões da Calcuradora.
+
             var ButtonTwo = sessionCalculator.FindElementByName("Dois");
             var ButtonMais = sessionCalculator.FindElementByName("Mais");
             var ButtonIgualA = sessionCalculator.FindElementByName("Igual a");
 
+            #endregion
+
             // Declarando as operações que devem ser feitas dentro da Calculadora.
-            ButtonTwo.Click();
+            #region Operação da Calculadora
 
+            ButtonTwo.Click();
             ButtonMais.Click();
-
             ButtonTwo.Click();
-
             ButtonIgualA.Click();
+
+            #endregion
         }
     }
 }

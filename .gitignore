@@ -44,7 +44,6 @@ x64/
 *.svclog
 *.scc
 *.config
-*.csproj
 
 # Visual C++ cache files
 ipch/

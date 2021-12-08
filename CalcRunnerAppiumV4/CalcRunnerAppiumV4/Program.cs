@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OpenQA.Selenium.Appium;
+using OpenQA.Selenium.Appium.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +12,16 @@ namespace CalcRunnerAppiumV4
     {
         static void Main(string[] args)
         {
-            WindowsDriver<WindowsElement>
+            WindowsDriver<WindowsElement> sessionCalculator;
+            AppiumOptions appiumOptions = new AppiumOptions();
+
+            appiumOptions.AddAdditionalCapability("app", "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App");
+
+            sessionCalculator = new WindowsDriver<WindowsElement>(
+                new Uri("http://127.0.0.1:4723"),
+                appiumOptions);
+
+            sessionCalculator.FindElementByName("");
         }
     }
 }

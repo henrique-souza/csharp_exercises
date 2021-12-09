@@ -19,6 +19,12 @@ namespace MSTestOverview
             capCalc.AddAdditionalCapability("app", "Microsoft.WindowsAlarms_8wekyb3d8bbwe!App");
 
             sessionAlarms = new WindowsDriver<WindowsElement>(new Uri("http://127.0.0.1:4723"), capCalc);
+
+            // Testando se o título é igual ao digitado ou não
+            // caso não seja, imprime na mensagem de falha do Teste o que está escrito
+            // a partir de $ e o título Real.
+            Assert.AreEqual("Alarmes e RelógioS", sessionAlarms.Title, false,
+                $"O titulo atual não condiz com o esperado: {sessionAlarms.Title}");
         }
     }
 }

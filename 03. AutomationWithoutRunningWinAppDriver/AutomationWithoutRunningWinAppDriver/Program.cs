@@ -1,13 +1,7 @@
 ﻿using OpenQA.Selenium.Appium;
-using OpenQA.Selenium.Appium.Enums;
 using OpenQA.Selenium.Appium.Service;
 using OpenQA.Selenium.Appium.Windows;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AutomationWithoutRunningWinAppDriver
 {
@@ -35,7 +29,7 @@ namespace AutomationWithoutRunningWinAppDriver
 
             // a partir desta linha, foi solicitado a chamada do objeto 'session'
             // então irei reescrever a linha acima
-            
+
             session.Quit();
         }
     }

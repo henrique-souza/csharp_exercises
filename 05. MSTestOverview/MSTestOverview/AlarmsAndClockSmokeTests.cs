@@ -12,6 +12,7 @@ namespace MSTestOverview
         [TestMethod]
         public void TestAlarmsAndClockIsLaunchingSuccessfully()
         {
+            //Parei to por a
             WindowsDriver<WindowsElement> sessionAlarms;
             //No exemplo, no lugar de AppiumOptions, ele usa 'DesiredCapabilities'
             AppiumOptions capCalc = new AppiumOptions();

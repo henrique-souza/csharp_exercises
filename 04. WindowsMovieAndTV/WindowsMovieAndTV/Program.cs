@@ -1,10 +1,6 @@
 ﻿using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Windows;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WindowsMovieAndTV
 {
@@ -12,7 +8,7 @@ namespace WindowsMovieAndTV
     {
         static void Main(string[] args)
         {
-            
+
             WindowsDriver<WindowsElement> WindowsMovieTV;
             AppiumOptions appiumOptions = new AppiumOptions();
 

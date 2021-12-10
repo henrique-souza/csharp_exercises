@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Windows;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Diagnostics;
 
@@ -83,11 +84,19 @@ namespace MSTestOverview
             sessionAlarms.FindElementByName("Adicionar nova cidade").Click();
 
             // este comando faz com que o teste seja feito com um delay de 1 segundo
-            System.Threading.Thread.Sleep(1000);
+            //System.Threading.Thread.Sleep(1000);
+
+            // Este comando faz com que a automação espere até 10 segundos para que a
+            // sessionAlarms esteja dentro dos objetos anteriormente apontados...
+            // ele vai esperar até 10 segundos para que o programa clique em "Relógio Mundial" 
+            // se caso o tempo estimado passe, o programa força a chamada da automação Appium
+            WebDriverWait waitForMe = new WebDriverWait(sessionAlarms, TimeSpan.FromSeconds(10));
 
             // isso faz com que o programa encontre o 'radio' em que está escrito "Inserir um local"
             // dentro de alarmes e relógio
             var textLocation = sessionAlarms.FindElementByName("Inserir um local");
+
+            waitForMe.Until(pred => textLocation.Displayed);
 
             //isso faz com que o programa digite as informações no 'radio' aberto anteriormente
             textLocation.SendKeys("Rio de Janeiro, Brasil");

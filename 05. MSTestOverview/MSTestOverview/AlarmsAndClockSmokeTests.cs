@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Windows;
 using System;
@@ -70,6 +71,29 @@ namespace MSTestOverview
             // irá falhar.
             Assert.AreEqual("Alarmes e Relógio", sessionAlarms.Title, false,
                 $"O titulo atual não condiz com o esperado: {sessionAlarms.Title}");
+        }
+        [TestMethod]
+        public void VerifyNewClockCanBeAdded()
+        {
+            //"ClockButton"
+            // dando um valor a variavel sessionAlarms
+            // estes valores são justamente os botões mapeados para que o programa faça a automação
+            sessionAlarms.FindElementByAccessibilityId("ClockButton").Click();
+
+            sessionAlarms.FindElementByName("Adicionar nova cidade").Click();
+
+            // este comando faz com que o teste seja feito com um delay de 1 segundo
+            System.Threading.Thread.Sleep(1000);
+
+            // isso faz com que o programa encontre o 'radio' em que está escrito "Inserir um local"
+            // dentro de alarmes e relógio
+            var textLocation = sessionAlarms.FindElementByName("Inserir um local");
+
+            //isso faz com que o programa digite as informações no 'radio' aberto anteriormente
+            textLocation.SendKeys("Rio de Janeiro, Brasil");
+            
+            // isso faz com que o que foi digitado acima seja aplicado ao programa
+            textLocation.SendKeys(Keys.Enter);
         }
     }
 }

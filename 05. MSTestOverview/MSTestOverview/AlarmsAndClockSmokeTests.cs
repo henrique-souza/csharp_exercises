@@ -68,7 +68,7 @@ namespace MSTestOverview
             // a partir de $ e o título Real.
             // Se colocarmos "Alarmes e RelógioS" de propósito, o programa irá rodar, mas o teste
             // irá falhar.
-            Assert.AreEqual("Alarmes e RelógioS", sessionAlarms.Title, false,
+            Assert.AreEqual("Alarmes e Relógio", sessionAlarms.Title, false,
                 $"O titulo atual não condiz com o esperado: {sessionAlarms.Title}");
         }
     }

@@ -100,7 +100,7 @@ namespace MSTestOverview
 
             //isso faz com que o programa digite as informações no 'radio' aberto anteriormente
             textLocation.SendKeys("Rio de Janeiro, Brasil");
-            
+
             // isso faz com que o que foi digitado acima seja aplicado ao programa
             textLocation.SendKeys(Keys.Enter);
         }

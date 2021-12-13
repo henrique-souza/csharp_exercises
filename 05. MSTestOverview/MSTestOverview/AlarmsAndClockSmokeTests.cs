@@ -73,10 +73,10 @@ namespace MSTestOverview
             Assert.AreEqual("Alarmes e Relógio", sessionAlarms.Title, false,
                 $"O titulo atual não condiz com o esperado: {sessionAlarms.Title}");
         }
+
         [TestMethod]
         public void VerifyNewClockCanBeAdded()
         {
-            //"ClockButton"
             // dando um valor a variavel sessionAlarms
             // estes valores são justamente os botões mapeados para que o programa faça a automação
             sessionAlarms.FindElementByAccessibilityId("ClockButton").Click();

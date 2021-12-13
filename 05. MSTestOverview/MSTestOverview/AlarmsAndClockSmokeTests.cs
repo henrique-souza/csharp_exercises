@@ -30,7 +30,6 @@ namespace MSTestOverview
         }
 
         [ClassCleanup]
-
         public static void CleanupAfterAllAlarmsTests()
         {
             Debug.WriteLine("Hello ClassCleanup");
@@ -42,21 +41,18 @@ namespace MSTestOverview
         }
 
         [TestInitialize]
-
         public void BeforeATest()
         {
             Debug.WriteLine("Before a test, calling TestInitialize");
         }
 
         [TestCleanup]
-
         public void AfterATest()
         {
             Debug.WriteLine("After a test, calling TestCleanup");
         }
 
         [TestMethod]
-
         public void JustAnotherTest()
         {
             Debug.WriteLine("Hello, another test.");

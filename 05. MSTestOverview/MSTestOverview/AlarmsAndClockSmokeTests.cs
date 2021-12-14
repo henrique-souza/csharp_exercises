@@ -13,6 +13,7 @@ namespace MSTestOverview
     {
         static WindowsDriver<WindowsElement> sessionAlarms;
 
+        public static WindowsDriver<WindowsElement> SessionAlarms { get => sessionAlarms; set => sessionAlarms = value; }
 
         [ClassInitialize]
         public static void PrepareForTestingAlarms(TestContext testContext)
@@ -101,6 +102,19 @@ namespace MSTestOverview
             textLocation.SendKeys(Keys.Enter);
 
             var clockItems = sessionAlarms.FindElementsByClassName("ListViewItem");
+
+            bool wasClockTitleFound = false;
+
+            foreach (WindowsElement clockTitle in clockItems)
+            {
+                if (clockTitle.Text.StartsWith("Rio de Janeiro, Brasil"))
+                {
+                    wasClockTitleFound = true;
+                    Debug.WriteLine("Clock found.");
+                    break;
+                }
+            }
+            Assert.IsTrue(wasClockTitleFound, "No clock title found.");
         }
     }
 }

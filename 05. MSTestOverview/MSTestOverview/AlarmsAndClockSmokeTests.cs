@@ -13,8 +13,6 @@ namespace MSTestOverview
     {
         static WindowsDriver<WindowsElement> sessionAlarms;
 
-        public static WindowsDriver<WindowsElement> SessionAlarms { get => sessionAlarms; set => sessionAlarms = value; }
-
         [ClassInitialize]
         public static void PrepareForTestingAlarms(TestContext testContext)
         {

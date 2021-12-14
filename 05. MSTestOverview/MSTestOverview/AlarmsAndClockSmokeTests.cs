@@ -99,6 +99,8 @@ namespace MSTestOverview
 
             // isso faz com que o que foi digitado acima seja aplicado ao programa
             textLocation.SendKeys(Keys.Enter);
+
+            var clockItems = sessionAlarms.FindElementsByClassName("ListViewItem");
         }
     }
 }

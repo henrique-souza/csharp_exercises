@@ -145,6 +145,12 @@ namespace MSTestOverview
                 new Uri("http://127.0.0.1:4723"), capDesktop);
 
             var contextItemDelete = sessionDesktop.FindElementByAccessibilityId("ContextMenuDelete");
+
+            WebDriverWait desktopWaitForMe = new WebDriverWait(sessionDesktop, TimeSpan.FromSeconds(10));
+
+            desktopWaitForMe.Until(pred => contextItemDelete.Displayed);
+
+            contextItemDelete.Click();
         }
     }
 }

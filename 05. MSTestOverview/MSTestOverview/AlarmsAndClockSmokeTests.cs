@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Windows;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Diagnostics;
@@ -101,18 +102,49 @@ namespace MSTestOverview
 
             var clockItems = sessionAlarms.FindElementsByClassName("ListViewItem");
 
-            bool wasClockTitleFound = false;
+            bool wasClockTileFound = false;
 
-            foreach (WindowsElement clockTitle in clockItems)
+            WindowsElement tileFound = null;
+
+            foreach (WindowsElement clockTile in clockItems)
             {
-                if (clockTitle.Text.StartsWith("Rio de Janeiro, Brasil"))
+                if (clockTile.Text.StartsWith("Rio de Janeiro, Brasil"))
                 {
-                    wasClockTitleFound = true;
                     Debug.WriteLine("Clock found.");
+                    wasClockTileFound = true;
+                    tileFound = clockTile;
                     break;
                 }
             }
-            Assert.IsTrue(wasClockTitleFound, "No clock title found.");
+            Assert.IsTrue(wasClockTileFound, "No clock tile found.");
+
+            
+            Actions actionForRightClick = new Actions(sessionAlarms);
+
+            // tileFound = um dos quadradinhos do Relógio, após inserir o relógio daquela região
+            // isso move o mouse até o elemento descrito
+            actionForRightClick.MoveToElement(tileFound);
+
+            // faz a ação de clicar
+            actionForRightClick.Click();
+
+            // Context.Click = Automatiza o clique com Botão Direito do Mouse
+            actionForRightClick.ContextClick();
+
+            actionForRightClick.Perform();
+
+
+            //No exemplo, no lugar de AppiumOptions, ele usa 'DesiredCapabilities'
+            AppiumOptions capDesktop = new AppiumOptions();
+
+            //No exemplo, no lugar de AddAdditionalCapability, ele usa 'SetCapability'
+            capDesktop.AddAdditionalCapability("app", "Root");
+
+            WindowsDriver<WindowsElement> sessionDesktop = 
+                new WindowsDriver<WindowsElement>(
+                new Uri("http://127.0.0.1:4723"), capDesktop);
+
+            var contextItemDelete = sessionDesktop.FindElementByAccessibilityId("ContextMenuDelete");
         }
     }
 }

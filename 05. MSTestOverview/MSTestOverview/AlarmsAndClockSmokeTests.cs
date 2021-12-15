@@ -13,10 +13,12 @@ namespace MSTestOverview
     public class AlarmsAndClockSmokeTests
     {
         static WindowsDriver<WindowsElement> sessionAlarms;
+        private static TestContext objectTestContext;
 
         [ClassInitialize]
         public static void PrepareForTestingAlarms(TestContext testContext)
         {
+
             Debug.WriteLine("Hello ClassInitialize");
 
             //No exemplo, no lugar de AppiumOptions, ele usa 'DesiredCapabilities'
@@ -27,6 +29,8 @@ namespace MSTestOverview
 
             sessionAlarms = new WindowsDriver<WindowsElement>(
                 new Uri("http://127.0.0.1:4723"), capCalc);
+
+            objectTestContext = testContext;
         }
 
         [ClassCleanup]

@@ -8,7 +8,7 @@ namespace RunNotePad
     {
         static void Main(string[] args)
         {
-            //Para testar esta aplicação corretamente, você precisará:
+            // Para testar esta aplicação corretamente, você precisará:
             // 1. Ativar as Ferramentas de Desenvolvedor do Windows 10
             // 2. Baixar a versão mais recente do WinAppDriver (https://github.com/microsoft/WinAppDriver)
             // 3. Instalar o Node.Js

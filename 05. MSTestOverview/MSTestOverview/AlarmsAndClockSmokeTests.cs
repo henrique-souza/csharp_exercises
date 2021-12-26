@@ -18,7 +18,6 @@ namespace MSTestOverview
         [ClassInitialize]
         public static void PrepareForTestingAlarms(TestContext testContext)
         {
-
             Debug.WriteLine("Hello ClassInitialize");
 
             //No exemplo, no lugar de AppiumOptions, ele usa 'DesiredCapabilities'
